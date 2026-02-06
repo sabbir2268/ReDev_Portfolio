@@ -30,7 +30,7 @@ const Projects = () => {
   const navigate = useNavigate();
 
   const handleMoreProjects = () => {
-    navigate("/projects");
+    navigate("/allProjects");
   };
   return (
     <motion.div

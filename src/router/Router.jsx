@@ -1,11 +1,13 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
-import Projects from "./../pages/Projects";
 import HowIBuild from "../pages/HowIBuild";
 import AboutMe from "./../pages/AboutMe";
 import HireMe from "./../pages/HireMe";
 import Blogs from "./../pages/Blogs";
+import AllProjects from "./../pages/AllProjects";
+import AdminLogin from "../pages/loginAsAdmin/LoginAsAdmin";
+import DashBoard from "../pages/dashBoard/DashBoard";
 
 export const router = createBrowserRouter([
   {
@@ -21,15 +23,15 @@ export const router = createBrowserRouter([
         element: <AboutMe></AboutMe>,
       },
       {
-        path: "projects",
-        element: <Projects></Projects>,
+        path: "allProjects",
+        element: <AllProjects></AllProjects>,
       },
       {
         path: "blogs",
         element: <Blogs></Blogs>,
       },
       {
-        path: "howibuild",
+        path: "howIBuild",
         element: <HowIBuild></HowIBuild>,
       },
       {
@@ -37,5 +39,13 @@ export const router = createBrowserRouter([
         element: <HireMe></HireMe>,
       },
     ],
+  },
+  {
+    path: "/loginAsAdmin",
+    element: <AdminLogin></AdminLogin>,
+  },
+  {
+    path: "/admin/dashboard",
+    element: <DashBoard></DashBoard>,
   },
 ]);

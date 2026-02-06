@@ -10,7 +10,7 @@ import {
 const Contact = () => {
   return (
     <section id="contact" className="max-w-7xl mx-auto px-6 py-20">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ">
         {/* LEFT: Info & Direct Contacts */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -35,44 +35,15 @@ const Contact = () => {
           <div className="space-y-3">
             <div className="flex items-center gap-3 text-gray-300 bg-[#0B1120] p-4 rounded-xl shadow-soft hover:shadow-strong transition">
               <FaEnvelope className="text-cyan-400" />
-              <span>yourmail@example.com</span>
+              <span>mdsabbirrahman2268@gmail.com</span>
             </div>
             <div className="flex items-center gap-3 text-gray-300 bg-[#0B1120] p-4 rounded-xl shadow-soft hover:shadow-strong transition">
               <FaPhoneAlt className="text-cyan-400" />
-              <span>+880 1XXXXXXXXX</span>
+              <span>+880 1955506677</span>
             </div>
           </div>
 
           {/* Direct Message Icons */}
-          <div className="flex items-center gap-5 text-xl text-gray-400">
-            <a
-              href="https://linkedin.com/in/yourusername"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-cyan-400 transition"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              href="https://github.com/yourusername"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-cyan-400 transition"
-              aria-label="GitHub"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="https://instagram.com/yourusername"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-cyan-400 transition"
-              aria-label="Instagram"
-            >
-              <FaInstagram />
-            </a>
-          </div>
         </motion.div>
 
         {/* RIGHT: Contact Form */}

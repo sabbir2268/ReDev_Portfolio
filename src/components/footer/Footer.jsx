@@ -16,27 +16,27 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <FaGithub />,
-      url: "https://github.com/yourusername",
+      url: "https://github.com/sabbir2268",
       label: "GitHub",
     },
     {
       icon: <FaLinkedin />,
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://linkedin.com/in/mdsabbir2268",
       label: "LinkedIn",
     },
     {
       icon: <FaFacebook />,
-      url: "https://facebook.com/yourusername",
+      url: "https://facebook.com/sabbir2268",
       label: "Facebook",
     },
     {
       icon: <FaInstagram />,
-      url: "https://instagram.com/yourusername",
+      url: "https://instagram.com/sabbir2268i",
       label: "Instagram",
     },
     {
       icon: <FaYoutube />,
-      url: "https://youtube.com/@yourusername",
+      url: "https://www.youtube.com/@TechZone-999",
       label: "YouTube",
     },
   ];
@@ -44,9 +44,9 @@ const Footer = () => {
   const quickLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Projects", path: "/projects" },
+    { name: "Projects", path: "/allProjects" },
     { name: "Blogs", path: "/blogs" },
-    { name: "How I Build", path: "/howibuild" },
+    { name: "How I Build", path: "/howIBuild" },
     { name: "Hire Me", path: "/hireMe" },
   ];
 

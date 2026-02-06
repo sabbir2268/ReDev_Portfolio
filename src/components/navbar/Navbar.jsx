@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router";
 import { motion } from "framer-motion";
+import { FaUserShield } from "react-icons/fa"; // Admin icon
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -21,16 +22,16 @@ const Navbar = () => {
   const links = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Projects", path: "/projects" },
+    { name: "Projects", path: "/allProjects" },
     { name: "Blogs", path: "/blogs" },
-    { name: "How I Build", path: "/howibuild" },
+    { name: "How I Build", path: "/howIBuild" },
   ];
 
   const isActive = (path) => location.pathname === path;
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 40 }}
+      initial={{ opacity: 0, x: -40 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
@@ -43,6 +44,7 @@ const Navbar = () => {
           onClick={() => setOpen(false)}
         />
       )}
+
       <nav
         ref={menuRef}
         className="fixed top-5 left-1/2 -translate-x-1/2 z-50
@@ -60,7 +62,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-6">
             {links.map((link) => (
               <li key={link.name}>
                 <Link
@@ -73,8 +75,6 @@ const Navbar = () => {
                   }`}
                 >
                   {link.name}
-
-                  {/* Active underline */}
                   {isActive(link.path) && (
                     <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-cyan-400 rounded-full" />
                   )}
@@ -82,13 +82,21 @@ const Navbar = () => {
               </li>
             ))}
 
+            {/* Hire Me Button */}
             <Link
               to="/hireMe"
-              className="px-5 py-2 rounded-full
-              bg-cyan-400 text-[#020617] font-medium
-              hover:bg-cyan-300 transition"
+              className="px-5 py-2 rounded-full bg-cyan-400 text-[#020617] font-medium hover:bg-cyan-300 transition"
             >
               Hire Me
+            </Link>
+
+            {/* Admin Login Icon */}
+            <Link
+              to="/loginAsAdmin"
+              className="ml-3 text-gray-200 hover:text-cyan-400 text-2xl"
+              title="Admin Login"
+            >
+              <FaUserShield />
             </Link>
           </ul>
 
@@ -104,7 +112,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {open && (
-          <div className="md:hidden bg-[#111827] border-t border-[#1F2933] rounded-b-xl shadow-lg ">
+          <div className="md:hidden bg-[#111827] border-t border-[#1F2933] rounded-b-xl shadow-lg">
             <ul className="flex flex-col gap-4 p-6">
               {links.map((link) => (
                 <li key={link.name}>
@@ -126,11 +134,18 @@ const Navbar = () => {
               <Link
                 to="/hireMe"
                 onClick={() => setOpen(false)}
-                className="mt-2 inline-block px-5 py-2
-                bg-cyan-400 text-[#020617]
-                rounded-full text-center font-medium"
+                className="mt-2 inline-block px-5 py-2 bg-cyan-400 text-[#020617] rounded-full text-center font-medium w-50 hover:bg-cyan-300 transition"
               >
                 Hire Me
+              </Link>
+
+              {/* Admin Login in mobile menu */}
+              <Link
+                to="/loginAsAdmin"
+                onClick={() => setOpen(false)}
+                className="inline-flex items-center justify-center text-gray-200 hover:text-cyan-400"
+              >
+                <FaUserShield /> Admin Login
               </Link>
             </ul>
           </div>

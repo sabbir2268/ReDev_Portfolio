@@ -84,3 +84,26 @@ body {
 .text-muted {
   color: var(--text-muted);
 }
+
+/* Text emphasis helpers */
+.text-strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.text-accent {
+  color: var(--color-primary-strong);
+  font-weight: 600;
+}
+
+.text-accent-soft {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+/* Section title */
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}

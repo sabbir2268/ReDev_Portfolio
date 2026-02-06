@@ -1,34 +1,40 @@
-import { FaGithub, FaLinkedin, FaDev, FaCode } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaDev,
+  FaCode,
+  FaFacebook,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const profiles = [
   {
     name: "GitHub",
     description: "Open-source & Projects",
-    highlight: "35+ repositories • Full-stack apps",
+    highlight: "40+ repositories • 5+ Full-stack apps ",
     icon: <FaGithub size={26} />,
-    link: "https://github.com/yourusername",
+    link: "https://github.com/sabbir2268",
   },
   {
     name: "LinkedIn",
     description: "Professional Presence",
     highlight: "Tech posts • Recruiter ready",
     icon: <FaLinkedin size={26} />,
-    link: "https://linkedin.com/in/yourusername",
+    link: "https://linkedin.com/in/mdsabbir2268",
   },
   {
     name: "LeetCode",
     description: "Problem Solving",
     highlight: "300+ problems • DSA practice",
     icon: <FaCode size={26} />,
-    link: "https://leetcode.com/yourusername",
+    link: "https://leetcode.com/u/Sabbir68/",
   },
   {
-    name: "Dev.to",
-    description: "Technical Writing",
-    highlight: "Articles on React & Firebase",
-    icon: <FaDev size={26} />,
-    link: "https://dev.to/yourusername",
+    name: "FaceBook",
+    description: "Social Media",
+    highlight: "Engage with developers • Share insights",
+    icon: <FaFacebook size={26} />,
+    link: "https://facebook.com/sabbir2268",
   },
 ];
 
