@@ -1,12 +1,25 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router";
 import { motion } from "framer-motion";
-import { FaUserShield } from "react-icons/fa"; // Admin icon
+import { FaUserShield, FaTachometerAlt } from "react-icons/fa"; // Admin icons
+import { AuthContext } from "./../../context/AuthContext";
+import { useNavigate } from "react-router";
 
 const Navbar = () => {
+  const { user } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const menuRef = useRef(null);
+
+  const navigate = useNavigate();
+
+  const handleAdminClick = () => {
+    if (user) {
+      navigate("/dashboard");
+    } else {
+      navigate("/loginAsAdmin");
+    }
+  };
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -91,13 +104,15 @@ const Navbar = () => {
             </Link>
 
             {/* Admin Login Icon */}
-            <Link
-              to="/loginAsAdmin"
-              className="ml-3 text-gray-200 hover:text-cyan-400 text-2xl"
-              title="Admin Login"
+            <button
+              onClick={handleAdminClick}
+              title={user ? "Dashboard" : "Admin Login"}
+              className="ml-3 text-gray-200 hover:text-cyan-400 text-2xl transition"
             >
-              <FaUserShield />
-            </Link>
+              {user ? <FaTachometerAlt /> : <FaUserShield />}
+            </button>
+
+            {/* Dashboard text link for logged-in users */}
           </ul>
 
           {/* Mobile Menu Button */}
@@ -139,14 +154,28 @@ const Navbar = () => {
                 Hire Me
               </Link>
 
-              {/* Admin Login in mobile menu */}
-              <Link
-                to="/loginAsAdmin"
-                onClick={() => setOpen(false)}
-                className="inline-flex items-center justify-center text-gray-200 hover:text-cyan-400"
+              {/* Admin Login / Dashboard button */}
+              <button
+                onClick={() => {
+                  handleAdminClick();
+                  setOpen(false);
+                }}
+                className="mt-4 flex items-center gap-2 text-gray-200 hover:text-cyan-400 text-lg transition"
               >
-                <FaUserShield /> Admin Login
-              </Link>
+                {user ? (
+                  <>
+                    <FaTachometerAlt className="text-xl" />
+                    <span>Dashboard</span>
+                  </>
+                ) : (
+                  <>
+                    <FaUserShield className="text-xl" />
+                    <span>Admin Login</span>
+                  </>
+                )}
+              </button>
+
+              {/* Dashboard text link for mobile menu */}
             </ul>
           </div>
         )}

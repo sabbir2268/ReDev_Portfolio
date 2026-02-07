@@ -1,21 +1,30 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase/firebase.init";
+import { AuthContext } from "../../context/AuthContext";
+import { FaArrowLeft } from "react-icons/fa";
 
-const AdminLogin = () => {
+const LoginAsAdmin = () => {
+  const { setLoading } = useContext(AuthContext);
   const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (
-      email === "mdsabbirrahman2268@gmail.com" &&
-      password === "PortfolioReDev12@#"
-    ) {
-      navigate("/admin/dashboard"); // Redirect to admin dashboard
-    } else {
-      alert("Invalid credentials!");
+    setLoading(true);
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate("/dashboard");
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Invalid email or password");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -27,6 +36,14 @@ const AdminLogin = () => {
         transition={{ duration: 0.5 }}
         className="w-full max-w-md bg-[var(--bg-surface)] rounded-2xl shadow-lg p-8"
       >
+        <button
+          type="button"
+          onClick={() => navigate("/")}
+          className="mt-4 bg-[var(--color-primary)] text-[var(--text-inverse)] font-medium py-3 rounded-full hover:bg-[var(--color-primary-hover)] transition w-[30%] mb-6 btn btn-sm"
+        >
+          <FaArrowLeft className="inline mr-2" />
+          Back Home
+        </button>
         <h1 className="text-3xl font-bold mb-6 text-[var(--text-main)] text-center">
           Admin Login
         </h1>
@@ -76,4 +93,4 @@ const AdminLogin = () => {
   );
 };
 
-export default AdminLogin;
+export default LoginAsAdmin;

@@ -8,6 +8,7 @@ import Blogs from "./../pages/Blogs";
 import AllProjects from "./../pages/AllProjects";
 import AdminLogin from "../pages/loginAsAdmin/LoginAsAdmin";
 import DashBoard from "../pages/dashBoard/DashBoard";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -45,7 +46,11 @@ export const router = createBrowserRouter([
     element: <AdminLogin></AdminLogin>,
   },
   {
-    path: "/admin/dashboard",
-    element: <DashBoard></DashBoard>,
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashBoard></DashBoard>
+      </PrivateRoute>
+    ),
   },
 ]);
