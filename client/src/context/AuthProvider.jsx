@@ -5,7 +5,7 @@ import { auth } from "../firebase/firebase.init";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [authLoading, setAuthLoading] = useState(true);
 
   const logOut = () => {
     return signOut(auth);
@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoading(false);
+      setAuthLoading(false);
     });
 
     return () => unsubscribe();
@@ -22,14 +22,13 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     user,
-    setUser,
-    loading,
-    setLoading,
+    authLoading,
+    setAuthLoading,
     logOut,
   };
 
   return (
-    <AuthContext.Provider value={authInfo}> {children}</AuthContext.Provider>
+    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
 };
 

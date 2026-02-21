@@ -3,24 +3,20 @@ import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 const PrivateRoute = ({ children }) => {
-  const { user, loading } = useContext(AuthContext);
+  const { user, authLoading } = useContext(AuthContext);
   const location = useLocation();
 
-  // While Firebase is checking auth
-  if (loading) {
+  if (authLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <span className="loading loading-spinner loading-lg text-primary"></span>
+        <span className="authLoading authLoading-spinner authLoading-lg text-primary"></span>
       </div>
     );
   }
 
-  // If not logged in → go to login
   if (!user) {
     return <Navigate to="/loginAsAdmin" state={{ from: location }} replace />;
   }
-
-  // If logged in → show page
   return children;
 };
 

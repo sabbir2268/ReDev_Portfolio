@@ -1,9 +1,9 @@
-const Loading = () => {
+const authLoading = () => {
   return (
     <div className="flex items-center justify-center h-screen">
-      <span className="loading loading-spinner loading-lg text-black"></span>
+      <span className="authLoading authLoading-spinner authLoading-lg text-black"></span>
     </div>
   );
 };
 
-export default Loading;
+export default authLoading;

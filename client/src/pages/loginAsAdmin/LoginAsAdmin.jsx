@@ -7,7 +7,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { FaArrowLeft } from "react-icons/fa";
 
 const LoginAsAdmin = () => {
-  const { setLoading } = useContext(AuthContext);
+  const { setAuthLoading } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -15,7 +15,7 @@ const LoginAsAdmin = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setAuthLoading(true);
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -24,7 +24,7 @@ const LoginAsAdmin = () => {
       console.error("Login error:", error);
       alert("Invalid email or password");
     } finally {
-      setLoading(false);
+      setAuthLoading(false);
     }
   };
 
@@ -56,6 +56,7 @@ const LoginAsAdmin = () => {
             <input
               type="email"
               value={email}
+              autoComplete="username"
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="admin@example.com"
@@ -70,6 +71,7 @@ const LoginAsAdmin = () => {
             <input
               type="password"
               value={password}
+              autoComplete="current-password"
               onChange={(e) => setPassword(e.target.value)}
               required
               placeholder="********"

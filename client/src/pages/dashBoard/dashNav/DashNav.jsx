@@ -17,7 +17,7 @@ const DashNav = () => {
 
   const navLinks = [
     { path: "dashboard/addProjects", label: "Add Projects" },
-    { path: "dashboard/addBlogs", label: "Add Blogs" },
+    { path: "dashboard/manageProjects", label: "Manage Projects" },
     { path: "dashboard/messages", label: "Read Messages" },
   ];
 
@@ -25,9 +25,12 @@ const DashNav = () => {
     <aside className="w-64 min-h-screen px-5 py-6 border-r border-[var(--border-color)] bg-[var(--bg-surface)] flex flex-col">
       {/* Brand / Header */}
       <div className="mb-10">
-        <h2 className="text-xl font-semibold text-[var(--text-main)]">
+        <Link
+          to={"/dashboard"}
+          className="text-xl font-semibold text-[var(--text-main)]"
+        >
           Dashboard
-        </h2>
+        </Link>
         <p className="text-sm text-muted mt-1">ReDev Admin Panel</p>
       </div>
 

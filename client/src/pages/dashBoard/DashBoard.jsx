@@ -6,9 +6,9 @@ import DashNav from "./dashNav/DashNav";
 import { Outlet } from "react-router";
 
 const Dashboard = () => {
-  const { loading } = useContext(AuthContext);
+  const { authLoading } = useContext(AuthContext);
 
-  if (loading) {
+  if (authLoading) {
     return <Loading></Loading>;
   }
 
