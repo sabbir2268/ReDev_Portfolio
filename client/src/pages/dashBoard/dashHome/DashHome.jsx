@@ -1,28 +1,25 @@
+import { useContext } from "react";
+import { ProjectsContext } from "../../../context/ProjectsContext";
+import { Link } from "react-router-dom";
+
 const DashHome = () => {
+  const { projects } = useContext(ProjectsContext);
+
   return (
     <div className="space-y-8">
       {/* Page Header */}
       <div>
         <h1 className="text-2xl font-semibold text-[var(--text-main)]">
-          Dashboard Overview
+          Dashboard
         </h1>
-        <p className="text-muted mt-1">
-          Quick summary of your portfolio activity
-        </p>
       </div>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="card p-5">
           <p className="text-muted text-sm">Total Projects</p>
-          <h2 className="text-3xl font-bold mt-2">12</h2>
+          <h2 className="text-3xl font-bold mt-2">{projects.length}</h2>
           <p className="text-accent-soft text-sm mt-1">Live & draft projects</p>
-        </div>
-
-        <div className="card p-5">
-          <p className="text-muted text-sm">Total Blogs</p>
-          <h2 className="text-3xl font-bold mt-2">5</h2>
-          <p className="text-accent-soft text-sm mt-1">Published articles</p>
         </div>
 
         <div className="card p-5">
@@ -45,8 +42,12 @@ const DashHome = () => {
         <h2 className="section-title">Quick Actions</h2>
 
         <div className="flex flex-wrap gap-4 mt-4">
-          <button className="btn-primary">+ Add Project</button>
-          <button className="btn-primary">+ Write Blog</button>
+          <Link to={"dashboard/addProjects"} className="btn-primary">
+            + Add Project
+          </Link>
+          <Link to={"dashboard/manageProjects"} className="btn-primary">
+            Manage Projects
+          </Link>
         </div>
       </div>
 

@@ -32,7 +32,7 @@ const About = () => {
         <h1 className="text-4xl md:text-5xl font-bold">
           About <span className="text-accent">Me</span>
         </h1>
-        <p className="mt-4 max-w-2xl text-muted">
+        <p className="mt-4 max-w-2xl text-cyan-600 italic">
           Know who I am, what I’ve learned, what I’ve achieved, the mistakes
           I’ve made, and where I’m heading next.
         </p>
@@ -43,27 +43,26 @@ const About = () => {
       {/* Current Profession */}
       <Card>
         <h2 className="section-title">Current Profession</h2>
-        <p className="text-muted">
-          Hello! I’m <span className="text-strong">Md Sabbir Rahman</span>, a{" "}
-          <span className="text-accent">Software Engineering student</span> at{" "}
+        <p className="">
+          A <span className="text-accent">Software Engineering student</span> at{" "}
           <span className="text-accent">Daffodil International University</span>
           .
         </p>
-        <p className="text-muted mt-3">
+        <p className=" mt-3">
           Currently in my{" "}
           <span className="text-accent">3rd year (7th semester)</span> with a{" "}
           <span className="text-accent">CGPA of 3.36</span>, having completed
           all coursework to date.
         </p>
-        <p className="text-muted mt-3">
+        <p className=" mt-3">
           Alongside academics, I work as a{" "}
-          <span className="text-strong">full-stack developer</span>, building
+          <span className="text-accent">full-stack developer</span>, building
           scalable and performance-focused web applications.
         </p>
-        <p className="text-muted mt-3">
+        <p className=" mt-3">
           My core stack includes{" "}
           <span className="text-accent">
-            React, Next.js, Node.js, Express, MongoDB
+            React, Node.js, Express, MongoDB, Next.js,
           </span>{" "}
           and <span className="text-accent">Tailwind CSS</span>.
         </p>
@@ -73,7 +72,7 @@ const About = () => {
       <Card>
         <h2 className="section-title">Experience</h2>
 
-        <p className="text-muted">
+        <p className="">
           With over{" "}
           <span className="text-strong">three years of experience</span> in web
           development, I have primarily focused on crafting{" "}
@@ -83,7 +82,7 @@ const About = () => {
           and <span className="text-strong">robust UI architectures</span>.
         </p>
 
-        <p className="text-muted mt-3">
+        <p className=" mt-3">
           Over the last <span className="text-strong">six months</span>, I have
           strengthened my <span className="text-strong">backend expertise</span>
           , working extensively with{" "}
@@ -105,7 +104,7 @@ const About = () => {
       <Card>
         <h2 className="section-title">Achievements</h2>
 
-        <ul className="space-y-2 text-muted">
+        <ul className="space-y-2 ">
           {/* Frontend & UI */}
           <li>
             <span className="text-strong">Frontend & UI:</span> Built
@@ -182,7 +181,7 @@ const About = () => {
       <Card>
         <h2 className="section-title">Future Plans</h2>
 
-        <ul className="space-y-2 text-muted">
+        <ul className="space-y-2 ">
           <li>
             Become a confident{" "}
             <span className="text-accent">full-stack developer</span> and
@@ -207,7 +206,7 @@ const About = () => {
           </li>
         </ul>
 
-        <p className="text-muted mt-3">
+        <p className=" mt-3">
           My journey is guided by{" "}
           <span className="text-accent">
             continuous learning, discipline, and ambition

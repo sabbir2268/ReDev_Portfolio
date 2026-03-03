@@ -14,36 +14,29 @@ const workflowSteps = [
     icon: <FaLightbulb />,
     title: "Idea & Requirements",
     description:
-      "I work on my own project ideas, client requirements, or AI-assisted brainstorming. I focus on defining the problem, core features, and MVP before writing code.",
+      "I work on client requirements, my own project ideas and AI-assisted brainstorming. I focus on defining the problem and core features.",
     tools: ["ChatGPT", "Black-Box", "DeepSeek"],
   },
   {
     icon: <FaFigma />,
     title: "UI / UX Design",
     description:
-      "I design layouts and user flows in Figma or adapt professional templates. This includes typography, colors, spacing, and responsive structure.",
-    tools: ["Figma", "PixSo", "ThemeForest"],
-  },
-  {
-    icon: <FaReact />,
-    title: "Frontend Development",
-    description:
-      "I build responsive, component-based interfaces with clean architecture, routing, and smooth interactions.",
-    tools: [
-      "HTML",
-      "CSS",
-      "Tailwind CSS",
-      "JavaScript",
-      "React",
-      "React Router",
-    ],
+      "I start with quick wireframes using pen and paper to explore layout ideas and structure. Then I research high-quality templates for inspiration and best practices. Finally, I design a refined, responsive interface in Figma with proper typography, spacing, and visual hierarchy.",
+    tools: ["Pen & Paper", "Figma", "PixSo", "ThemeForest"],
   },
   {
     icon: <FaImage />,
     title: "Assets & UI Polish",
     description:
-      "I integrate optimized images, icons, fonts, and favicons to make the UI feel premium and production-ready.",
+      "I integrate modern, high-quality assets that align with the brand identity and visual standards. From optimized images and icons to typography and favicons, I ensure every element enhances user trust, strengthens brand recognition.",
     tools: ["Icons", "Images", "PNG / WebP", "Fonts", "Favicon"],
+  },
+  {
+    icon: <FaReact />,
+    title: "Frontend Development",
+    description:
+      "I build responsive, component-driven interfaces with a structured architecture and clean routing. At every stage, I review alignment and responsiveness across devices while keeping backend integration, security best practices, SEO fundamentals, and future scalability in mind.",
+    tools: ["Tailwind CSS", "React", "React Router"],
   },
   {
     icon: <FaServer />,
@@ -56,14 +49,14 @@ const workflowSteps = [
     icon: <FaDatabase />,
     title: "Database & Authentication",
     description:
-      "I design MongoDB schemas, handle CRUD operations, and implement authentication with protected routes.",
-    tools: ["MongoDB", "Firebase"],
+      "I design structured MongoDB schemas, manage efficient CRUD operations, and implement secure authentication with protected routes and role-based access control. For certain projects, I leverage Firebase for streamlined authentication and rapid backend integration.",
+    tools: ["MongoDB", "Firebase Auth"],
   },
   {
     icon: <FaRocket />,
     title: "Deployment & Maintenance",
     description:
-      "I version-control the project, deploy it to production, and continuously optimize performance and security.",
+      "I manage version control with Git, deploy projects to production, and regularly improve performance and security to keep everything running smoothly.",
     tools: ["Git", "GitHub", "Vercel / Netlify"],
   },
 ];
@@ -86,14 +79,14 @@ const Workflow = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {workflowSteps.map((step, index) => (
-          <Motion>
-            <div key={index} className="card p-7">
-              <div className="flex items-start gap-4 mb-4">
+          <Motion key={index} className="h-full">
+            <div className="card p-7 h-full flex flex-col">
+              <div className="flex items-center gap-4 mb-4">
                 <div className="text-2xl text-accent-soft">{step.icon}</div>
                 <h3 className="section-title">{step.title}</h3>
               </div>
 
-              <p className="text-muted mb-4 leading-relaxed">
+              <p className="text-strong mb-4 leading-relaxed flex-grow">
                 {step.description}
               </p>
 
@@ -101,7 +94,7 @@ const Workflow = () => {
                 {step.tools.map((tool, i) => (
                   <span
                     key={i}
-                    className="text-sm px-3 py-1 rounded-full border border-[var(--border-color)] text-accent-soft"
+                    className="text-sm px-3 py-1 rounded-full border border-[var(--border-color)] text-accent bg-gray-200"
                   >
                     {tool}
                   </span>

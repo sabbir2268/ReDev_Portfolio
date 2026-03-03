@@ -70,7 +70,7 @@ const Navbar = () => {
             to="/"
             className="text-xl font-bold tracking-wide text-gray-200"
           >
-            Re.<span className="text-cyan-400">Dev</span>
+            SAB<span className="text-cyan-400">BIR</span>
           </Link>
 
           {/* Desktop Menu */}

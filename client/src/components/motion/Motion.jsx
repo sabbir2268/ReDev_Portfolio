@@ -5,10 +5,11 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
-const Motion = ({ children }) => {
+const Motion = ({ children, className = "" }) => {
   return (
     <div>
       <motion.div
+        className={className}
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"

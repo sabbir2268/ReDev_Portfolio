@@ -8,12 +8,12 @@ const ProjectCard = ({ project }) => {
   // Normalize technologies
   const technologies = Array.isArray(project.technologies)
     ? project.technologies
-    : project.technologies?.split(",").map(t => t.trim()) || [];
+    : project.technologies?.split(",").map((t) => t.trim()) || [];
 
   // Normalize categories
   const categories = Array.isArray(project.categories)
     ? project.categories
-    : project.categories?.split(",").map(c => c.trim()) || [];
+    : project.categories?.split(",").map((c) => c.trim()) || [];
 
   return (
     <div className="h-full">
@@ -21,9 +21,7 @@ const ProjectCard = ({ project }) => {
         <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
 
         {/* Description */}
-        <p className="text-gray-600 mb-4 line-clamp-4">
-          {project.description}
-        </p>
+        <p className="text-gray-600 mb-4 line-clamp-4">{project.description}</p>
 
         {/* Technologies */}
         {technologies.length > 0 && (
@@ -47,7 +45,7 @@ const ProjectCard = ({ project }) => {
                 key={idx}
                 className="px-3 py-1 text-sm bg-gray-500 text-white rounded-full"
               >
-                {cat}
+                Type: {cat}
               </span>
             ))}
           </div>
@@ -58,7 +56,7 @@ const ProjectCard = ({ project }) => {
           {project.github && (
             <button
               onClick={() => openLink(project.github)}
-              className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition"
+              className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition btn btn-sm"
             >
               GitHub
             </button>
@@ -67,9 +65,9 @@ const ProjectCard = ({ project }) => {
           {project.live && (
             <button
               onClick={() => openLink(project.live)}
-              className="px-4 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition"
+              className="px-4 py-1 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition btn btn-sm"
             >
-              Live
+              Live Link
             </button>
           )}
         </div>

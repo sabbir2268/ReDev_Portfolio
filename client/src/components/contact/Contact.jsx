@@ -25,9 +25,9 @@ const Contact = () => {
               Let's <span className="text-cyan-400">Connect</span>
             </h2>
             <p className="text-muted leading-relaxed max-w-md">
-              I'm always open to new projects, collaborations, or just a
-              friendly chat. Reach out via email, phone, or social platforms
-              below.
+              I'm always open to Freelance, Contract Job, collaborations, or
+              just a friendly chat. Reach out via email, phone, or social
+              platforms below.
             </p>
           </div>
 

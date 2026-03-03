@@ -24,6 +24,10 @@ const HireMe = () => {
       title: "Full-Stack Solutions",
       desc: "Complete end-to-end solutions — from idea validation to deployment and maintenance.",
     },
+    {
+      title: "Landing Page",
+      desc: "Responsive, accessible, and visually polished interfaces using modern frontend tools.",
+    },
   ];
 
   const steps = ["Plan", "Design", "Develop", "Deliver"];
@@ -32,7 +36,7 @@ const HireMe = () => {
     <section id="hire-me" className="max-w-7xl mx-auto px-6 py-30 ">
       {/* HERO */}
       <Motion>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-15">
           {/* LEFT */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
@@ -71,7 +75,7 @@ const HireMe = () => {
 
       {/* SERVICES */}
       <Motion>
-        <div className="mb-28">
+        <div className="mb-15">
           <h2 className="section-title">What I Can Help You With</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
@@ -89,7 +93,7 @@ const HireMe = () => {
 
       {/* WHY HIRE ME */}
       <Motion>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-15">
           <div>
             <h2 className="section-title">Why Hire Me</h2>
             <p className="text-muted max-w-xl mt-4">
@@ -116,7 +120,7 @@ const HireMe = () => {
       </Motion>
 
       {/* WORK PROCESS */}
-      <Motion>
+      {/* <Motion>
         <div className="mb-28">
           <h2 className="section-title">My Work Process</h2>
 
@@ -129,7 +133,7 @@ const HireMe = () => {
             ))}
           </div>
         </div>
-      </Motion>
+      </Motion> */}
 
       {/* FINAL CTA */}
       <Motion>

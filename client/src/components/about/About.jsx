@@ -10,7 +10,7 @@ const About = () => {
     "MongoDB",
     "Firebase",
     "Tailwind CSS",
-    "Git",
+    "GitHub",
   ];
   return (
     <motion.div
@@ -37,7 +37,7 @@ const About = () => {
           {/* Content */}
           <div className="flex-1">
             <h2 className="text-4xl font-bold text-gray-800">
-              Hi, I’m <span className="text-cyan-500">Rehan</span>
+              Hi, I’m <span className="text-cyan-500">Sabbir</span>
             </h2>
 
             <p className="mt-3 text-xl text-gray-700 font-medium">
@@ -62,7 +62,7 @@ const About = () => {
               {skills.map((tech, index) => (
                 <span
                   key={index}
-                  className="inline-flex items-center justify-center mr-2 mb-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-800 rounded-full border border-gray-200"
+                  className="inline-flex items-center justify-center mr-2 mb-2 px-3 py-1 text-sm font-medium bg-cyan-300 text-gray-800 rounded-full border border-gray-200"
                 >
                   {tech}
                 </span>
