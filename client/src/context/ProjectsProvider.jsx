@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { ProjectsContext } from "./ProjectsContext";
-import { API_URL } from "../api";
 
 const ProjectsProvider = ({ children }) => {
   const [projects, setProjects] = useState([]);
   const [projectsLoading, setProjectsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${API_URL}/projects`)
+    fetch("http://localhost:3000/projects")
       .then((res) => res.json())
       .then((data) => {
         setProjects(data);
