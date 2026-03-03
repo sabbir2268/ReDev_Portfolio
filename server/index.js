@@ -34,22 +34,23 @@ async function run() {
     //post method
     app.post("/projects", async (req, res) => {
       try {
-        const { name, description, technologies,categories, github, live } = req.body;
+        const { name, description, technologies, categories, github, live } =
+          req.body;
 
-    const newProject = {
-      name,
-      description,
-      technologies: Array.isArray(technologies)
-        ? technologies
-        : technologies.split(",").map(t => t.trim()),
-      categories: Array.isArray(categories)
-        ? categories
-        : categories.split(",").map(c => c.trim()),
-      github,
-      live,
-    };
+        const newProject = {
+          name,
+          description,
+          technologies: Array.isArray(technologies)
+            ? technologies
+            : technologies.split(",").map((t) => t.trim()),
+          categories: Array.isArray(categories)
+            ? categories
+            : categories.split(",").map((c) => c.trim()),
+          github,
+          live,
+        };
 
-    const result = await projectsCollection.insertOne(newProject);
+        const result = await projectsCollection.insertOne(newProject);
         console.log("project added successfully", newProject);
         res.status(201).json({
           success: true,
@@ -73,77 +74,76 @@ async function run() {
     //delete projects from project list
     // DELETE project
     app.delete("/projects/:id", async (req, res) => {
-  try {
-    const id = req.params.id;
+      try {
+        const id = req.params.id;
 
-    const result = await projectsCollection.deleteOne({
-      _id: new ObjectId(id),
+        const result = await projectsCollection.deleteOne({
+          _id: new ObjectId(id),
+        });
+
+        if (result.deletedCount === 1) {
+          res.json({
+            success: true,
+            message: "Project deleted successfully",
+          });
+        } else {
+          res.status(404).json({
+            success: false,
+            message: "Project not found",
+          });
+        }
+      } catch (error) {
+        res.status(500).json({
+          success: false,
+          message: "Failed to delete project",
+          error: error.message,
+        });
+      }
     });
 
-    if (result.deletedCount === 1) {
-      res.json({
-        success: true,
-        message: "Project deleted successfully",
-      });
-    } else {
-      res.status(404).json({
-        success: false,
-        message: "Project not found",
-      });
-    }
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: "Failed to delete project",
-      error: error.message,
+    // UPDATE project
+    app.put("/projects/:id", async (req, res) => {
+      try {
+        const id = req.params.id;
+
+        const { name, description, technologies, categories, github, live } =
+          req.body;
+
+        const updatedDoc = {
+          $set: {
+            name,
+            description,
+            technologies,
+            categories,
+            github,
+            live,
+          },
+        };
+
+        const result = await projectsCollection.updateOne(
+          { _id: new ObjectId(id) },
+          updatedDoc,
+        );
+
+        if (result.modifiedCount === 1) {
+          res.json({
+            success: true,
+            message: "Project updated successfully",
+          });
+        } else {
+          res.status(404).json({
+            success: false,
+            message: "Project not found or no changes made",
+          });
+        }
+      } catch (error) {
+        res.status(500).json({
+          success: false,
+          message: "Failed to update project",
+          error: error.message,
+        });
+      }
     });
-  }
-});
-
-// UPDATE project
-app.put("/projects/:id", async (req, res) => {
-  try {
-    const id = req.params.id;
-
-    const { name, description, technologies, categories, github, live } =
-      req.body;
-
-    const updatedDoc = {
-      $set: {
-        name,
-        description,
-        technologies,
-        categories,
-        github,
-        live,
-      },
-    };
-
-    const result = await projectsCollection.updateOne(
-      { _id: new ObjectId(id) },
-      updatedDoc
-    );
-
-    if (result.modifiedCount === 1) {
-      res.json({
-        success: true,
-        message: "Project updated successfully",
-      });
-    } else {
-      res.status(404).json({
-        success: false,
-        message: "Project not found or no changes made",
-      });
-    }
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: "Failed to update project",
-      error: error.message,
-    });
-  }
-});
-    
   } catch (err) {
     console.error(err);
   } finally {
