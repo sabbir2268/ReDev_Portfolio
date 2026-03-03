@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { ProjectsContext } from "../../../context/ProjectsContext";
+import { API_URL } from "../../../api";
 
 const ManageProjects = () => {
   const { projects, setProjects } = useContext(ProjectsContext);
@@ -20,7 +21,7 @@ const ManageProjects = () => {
       return;
 
     try {
-      const res = await fetch(`http://localhost:3000/projects/${id}`, {
+      const res = await fetch(`${API_URL}/projects/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
@@ -64,20 +65,17 @@ const ManageProjects = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch(
-        `http://localhost:3000/projects/${selectedProject._id}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            ...formData,
-            technologies: formData.technologies.split(",").map((t) => t.trim()),
-            categories: formData.categories.split(",").map((c) => c.trim()),
-          }),
+      const res = await fetch(`${API_URL}/projects/${selectedProject._id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify({
+          ...formData,
+          technologies: formData.technologies.split(",").map((t) => t.trim()),
+          categories: formData.categories.split(",").map((c) => c.trim()),
+        }),
+      });
 
       if (res.ok) {
         const updatedProject = {

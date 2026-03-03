@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { API_URL } from "../../../api";
 
 const AddProjects = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +22,7 @@ const AddProjects = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/projects", {
+      const response = await fetch(`${API_URL}/projects`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
