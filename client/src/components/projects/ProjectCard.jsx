@@ -5,28 +5,55 @@ const ProjectCard = ({ project }) => {
     if (url) window.open(url, "_blank");
   };
 
+  // Normalize technologies
+  const technologies = Array.isArray(project.technologies)
+    ? project.technologies
+    : project.technologies?.split(",").map(t => t.trim()) || [];
+
+  // Normalize categories
+  const categories = Array.isArray(project.categories)
+    ? project.categories
+    : project.categories?.split(",").map(c => c.trim()) || [];
+
   return (
     <div className="h-full">
       <div className="card flex flex-col h-full p-6 border rounded-lg shadow hover:shadow-lg transition-shadow">
         <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
 
-        {/* Description with consistent height and ellipsis */}
-        <p className="text-gray-600 mb-4 line-clamp-4">{project.description}</p>
+        {/* Description */}
+        <p className="text-gray-600 mb-4 line-clamp-4">
+          {project.description}
+        </p>
 
         {/* Technologies */}
-        {project.technologies && (
+        {technologies.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-4">
-            {project.technologies.split(",").map((tech, idx) => (
+            {technologies.map((tech, idx) => (
               <span
                 key={idx}
                 className="inline-flex items-center justify-center px-3 py-1 text-sm font-medium bg-gray-100 text-gray-800 rounded-full border border-gray-200"
               >
-                {tech.trim()}
+                {tech}
               </span>
             ))}
           </div>
         )}
 
+        {/* Categories */}
+        {categories.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {categories.map((cat, idx) => (
+              <span
+                key={idx}
+                className="px-3 py-1 text-sm bg-gray-500 text-white rounded-full"
+              >
+                {cat}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* Buttons */}
         <div className="mt-auto flex gap-4">
           {project.github && (
             <button
@@ -36,6 +63,7 @@ const ProjectCard = ({ project }) => {
               GitHub
             </button>
           )}
+
           {project.live && (
             <button
               onClick={() => openLink(project.live)}

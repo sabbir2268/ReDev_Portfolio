@@ -5,6 +5,7 @@ const AddProjects = () => {
     name: "",
     description: "",
     technologies: "",
+    categories: "Landing-page", // default selected
     github: "",
     live: "",
   });
@@ -39,6 +40,7 @@ const AddProjects = () => {
       name: "",
       description: "",
       technologies: "",
+      categories: "Landing-page",
       github: "",
       live: "",
     });
@@ -89,6 +91,23 @@ const AddProjects = () => {
             className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
             placeholder="Example: React, Node.js, MongoDB"
           />
+        </div>
+
+        {/* Categories Dropdown */}
+        <div>
+          <label className="block mb-2 font-medium">Category</label>
+          <select
+            name="categories"
+            value={formData.categories}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          >
+            <option value="Landing-page">Landing Page</option>
+            <option value="Front-End">Front-End</option>
+            <option value="Back-End">Back-End</option>
+            <option value="Full-Stack">Full Stack</option>
+          </select>
         </div>
 
         {/* GitHub Link */}
