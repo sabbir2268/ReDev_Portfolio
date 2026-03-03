@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import API_URL from "../../../api";
+import { API_URL } from "../api";
 const AddProjects = () => {
   const [formData, setFormData] = useState({
     name: "",

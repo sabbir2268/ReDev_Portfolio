@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ProjectsContext } from "./ProjectsContext";
-import API_URL from "../../../api";
+import { API_URL } from "../api";
 
 const ProjectsProvider = ({ children }) => {
   const [projects, setProjects] = useState([]);

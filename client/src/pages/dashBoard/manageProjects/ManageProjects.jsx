@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import API_URL from "../../../api";
+import { API_URL } from "../api";
 import { ProjectsContext } from "../../../context/ProjectsContext";
 
 const ManageProjects = () => {
