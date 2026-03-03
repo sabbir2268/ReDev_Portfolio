@@ -1,6 +1,6 @@
 import About from "../components/about/About";
 import Contact from "../components/contact/Contact";
-import MyActivity from "../components/MyActivity/MyActivity";
+import MyActivity from "../components/myActivity/MyActivity";
 import Projects from "./../components/projects/Projects";
 
 const Home = () => {
