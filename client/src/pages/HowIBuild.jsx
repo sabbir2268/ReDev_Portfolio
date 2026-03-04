@@ -66,7 +66,7 @@ const Workflow = () => {
     <section className="max-w-7xl mx-auto px-6 py-30">
       {/* helmet */}
       <Helmet>
-        <title>How I Build | Sabbir</title>
+        <title>How I Build Web Applications | Sabbir</title>
       </Helmet>
 
       {/* Section Header */}

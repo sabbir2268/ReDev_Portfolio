@@ -3,7 +3,7 @@ import { AuthContext } from "../../context/AuthContext";
 
 import Loading from "../../components/Loading";
 import DashNav from "./dashNav/DashNav";
-import { Outlet } from "react-router";
+import { Outlet } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {

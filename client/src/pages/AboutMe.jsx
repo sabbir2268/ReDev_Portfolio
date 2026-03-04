@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 const fadeUp = {
@@ -23,7 +23,6 @@ const Card = ({ children }) => (
 const About = () => {
   return (
     <section className="max-w-7xl mx-auto px-6 py-24 md:py-30">
-      import {Helmet} from "react-helmet-async";
       <Helmet>
         <title>About | Sabbir</title>
       </Helmet>

@@ -1,6 +1,6 @@
 import { FaCheckCircle, FaCode, FaServer, FaRocket } from "react-icons/fa";
 import Contact from "../components/contact/Contact";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import Motion from "../components/motion/Motion";
 import { Helmet } from "react-helmet-async";
 const HireMe = () => {
