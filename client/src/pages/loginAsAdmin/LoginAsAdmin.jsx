@@ -5,6 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase/firebase.init";
 import { AuthContext } from "../../context/AuthContext";
 import { FaArrowLeft } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const LoginAsAdmin = () => {
   const { setAuthLoading } = useContext(AuthContext);
@@ -30,6 +31,11 @@ const LoginAsAdmin = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[var(--bg-main)] px-4">
+      {/* helmet */}
+      <Helmet>
+        <title>Login | Admin</title>
+      </Helmet>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

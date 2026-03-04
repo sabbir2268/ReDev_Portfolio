@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router";
+import { Helmet } from "react-helmet-async";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -22,6 +23,10 @@ const Card = ({ children }) => (
 const About = () => {
   return (
     <section className="max-w-7xl mx-auto px-6 py-24 md:py-30">
+      import {Helmet} from "react-helmet-async";
+      <Helmet>
+        <title>About | Sabbir</title>
+      </Helmet>
       {/* Header */}
       <motion.div
         variants={fadeUp}
@@ -37,9 +42,7 @@ const About = () => {
           I’ve made, and where I’m heading next.
         </p>
       </motion.div>
-
       {/* Grid */}
-
       {/* Current Profession */}
       <Card>
         <h2 className="section-title">Current Profession</h2>
@@ -67,7 +70,6 @@ const About = () => {
           and <span className="text-accent">Tailwind CSS</span>.
         </p>
       </Card>
-
       {/* Experience */}
       <Card>
         <h2 className="section-title">Experience</h2>
@@ -99,7 +101,6 @@ const About = () => {
           </Link>
         </div>
       </Card>
-
       {/* Achievements */}
       <Card>
         <h2 className="section-title">Achievements</h2>
@@ -131,7 +132,6 @@ const About = () => {
           </li>
         </ul>
       </Card>
-
       {/* Failures */}
       <Card>
         <h2 className="section-title">Failures & Lessons</h2>
@@ -176,7 +176,6 @@ const About = () => {
           .
         </p>
       </Card>
-
       {/* Future Plans */}
       <Card>
         <h2 className="section-title">Future Plans</h2>

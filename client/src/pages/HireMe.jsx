@@ -2,7 +2,7 @@ import { FaCheckCircle, FaCode, FaServer, FaRocket } from "react-icons/fa";
 import Contact from "../components/contact/Contact";
 import { Link } from "react-router";
 import Motion from "../components/motion/Motion";
-
+import { Helmet } from "react-helmet-async";
 const HireMe = () => {
   const highlights = [
     { icon: <FaCode />, label: "Clean Code" },
@@ -30,10 +30,13 @@ const HireMe = () => {
     },
   ];
 
-  const steps = ["Plan", "Design", "Develop", "Deliver"];
-
   return (
     <section id="hire-me" className="max-w-7xl mx-auto px-6 py-30 ">
+      {/* helmet */}
+      <Helmet>
+        <title>Hire Me | Sabbir</title>
+      </Helmet>
+
       {/* HERO */}
       <Motion>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-15">

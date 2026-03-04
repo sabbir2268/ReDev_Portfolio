@@ -14,9 +14,17 @@ const Projects = () => {
   };
 
   if (projectsLoading)
-    return <p className="text-center mt-10">authLoading projects...</p>;
+    return (
+      <p className="text-center mt-10 h-20 text-accent text-2xl">
+        Loading projects...
+      </p>
+    );
   if (!projects || projects.length === 0)
-    return <p className="text-center mt-10">No projects available</p>;
+    return (
+      <p className="text-center mt-10 h-20 text-accent text-2xl">
+        No projects available
+      </p>
+    );
 
   return (
     <motion.div
@@ -31,7 +39,7 @@ const Projects = () => {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.slice(0, 3).map((project, index) => (
+          {projects.slice(-3).map((project, index) => (
             <ProjectCard project={project} key={index}></ProjectCard>
           ))}
         </div>

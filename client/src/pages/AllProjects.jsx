@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ProjectsContext } from "../context/ProjectsContext";
 import ProjectCard from "../components/projects/ProjectCard";
+import { Helmet } from "react-helmet-async";
 
 const AllProjects = () => {
   const { projects, projectsLoading } = useContext(ProjectsContext);
@@ -20,6 +21,9 @@ const AllProjects = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-30">
+      <Helmet>
+        <title>Projects | Sabbir</title>
+      </Helmet>
       <h2 className="text-3xl font-bold mb-6 text-center">All My Projects</h2>
 
       {Object.keys(projectsByCategory).map((category) => (

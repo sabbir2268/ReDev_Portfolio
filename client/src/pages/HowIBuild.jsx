@@ -8,7 +8,7 @@ import {
   FaRocket,
 } from "react-icons/fa";
 import Motion from "../components/motion/Motion";
-
+import { Helmet } from "react-helmet-async";
 const workflowSteps = [
   {
     icon: <FaLightbulb />,
@@ -64,6 +64,11 @@ const workflowSteps = [
 const Workflow = () => {
   return (
     <section className="max-w-7xl mx-auto px-6 py-30">
+      {/* helmet */}
+      <Helmet>
+        <title>How I Build | Sabbir</title>
+      </Helmet>
+
       {/* Section Header */}
       <div className="max-w-2xl mb-14">
         <h2 className="text-3xl font-semibold mb-3">
