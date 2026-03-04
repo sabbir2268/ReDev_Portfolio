@@ -72,7 +72,7 @@ const About = () => {
             {/* Action Buttons */}
             <div className="mt-8 flex gap-4 flex-wrap">
               <Link
-                to={"/client/public/Proffessional CV feb-25.pdf"}
+                to={"/Proffessional CV feb-25.pdf"}
                 target="blank"
                 className="px-6 py-2 rounded-full bg-cyan-500 text-white font-medium hover:bg-cyan-400 transition"
               >
