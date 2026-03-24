@@ -16,9 +16,9 @@ const DashNav = () => {
   };
 
   const navLinks = [
-    { path: "dashboard/addProjects", label: "Add Projects" },
-    { path: "dashboard/manageProjects", label: "Manage Projects" },
-    { path: "dashboard/messages", label: "Read Messages" },
+    { path: "/addProjects", label: "Add Projects" },
+    { path: "/manageProjects", label: "Manage Projects" },
+    { path: "/messages", label: "Read Messages" },
   ];
 
   return (
