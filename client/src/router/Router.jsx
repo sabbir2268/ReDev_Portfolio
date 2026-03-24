@@ -16,28 +16,27 @@ import ManageProjects from "../pages/dashBoard/manageProjects/ManageProjects";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout></MainLayout>,
+    element: <MainLayout />,
     children: [
       {
         index: true,
-        element: <Home></Home>,
+        element: <Home />,
       },
       {
         path: "about",
-        element: <AboutMe></AboutMe>,
+        element: <AboutMe />,
       },
       {
         path: "allProjects",
-        element: <AllProjects></AllProjects>,
+        element: <AllProjects />,
       },
-
       {
         path: "howIBuild",
-        element: <HowIBuild></HowIBuild>,
+        element: <HowIBuild />,
       },
       {
         path: "hireMe",
-        element: <HireMe></HireMe>,
+        element: <HireMe />,
       },
     ],
   },
@@ -58,15 +57,15 @@ export const router = createBrowserRouter([
         element: <DashHome />,
       },
       {
-        path: "dashboard/addProjects",
+        path: "addProjects",
         element: <AddProjects />,
       },
       {
-        path: "dashboard/manageProjects",
+        path: "manageProjects",
         element: <ManageProjects />,
       },
       {
-        path: "dashboard/messages",
+        path: "messages",
         element: <Messages />,
       },
     ],
