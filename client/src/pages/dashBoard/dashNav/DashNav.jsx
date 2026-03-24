@@ -15,10 +15,11 @@ const DashNav = () => {
     }
   };
 
+  // Child routes inside /dashboard
   const navLinks = [
-    { path: "/addProjects", label: "Add Projects" },
-    { path: "/manageProjects", label: "Manage Projects" },
-    { path: "/messages", label: "Read Messages" },
+    { path: "addProjects", label: "Add Projects" },
+    { path: "manageProjects", label: "Manage Projects" },
+    { path: "messages", label: "Read Messages" },
   ];
 
   return (
@@ -26,7 +27,7 @@ const DashNav = () => {
       {/* Brand / Header */}
       <div className="mb-10">
         <Link
-          to={"/dashboard"}
+          to="/dashboard"
           className="text-xl font-semibold text-[var(--text-main)]"
         >
           Dashboard
@@ -52,7 +53,7 @@ const DashNav = () => {
           {navLinks.map(({ path, label }) => (
             <li key={path}>
               <NavLink
-                to={path}
+                to={`/dashboard/${path}`} // prepend /dashboard here
                 className={({ isActive }) =>
                   `relative block w-full rounded-xl px-4 py-2.5 text-sm transition-all duration-200
                   ${
