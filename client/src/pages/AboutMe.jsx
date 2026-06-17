@@ -53,7 +53,7 @@ const About = () => {
         <p className=" mt-3">
           Currently in my{" "}
           <span className="text-accent">3rd year (7th semester)</span> with a{" "}
-          <span className="text-accent">CGPA of 3.36</span>, having completed
+          <span className="text-accent">CGPA of 3.57</span>, having completed
           all coursework to date.
         </p>
         <p className=" mt-3">
@@ -184,7 +184,7 @@ const About = () => {
             Become a confident{" "}
             <span className="text-accent">full-stack developer</span> and
             complete my graduation with a focus on{" "}
-            <span className="text-accent">Data Science</span>
+            <span className="text-accent">Cyber Security</span>
           </li>
           <li>
             Launch my own <span className="text-accent">software company</span>{" "}

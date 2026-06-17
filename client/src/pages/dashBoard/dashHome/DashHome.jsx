@@ -42,10 +42,10 @@ const DashHome = () => {
         <h2 className="section-title">Quick Actions</h2>
 
         <div className="flex flex-wrap gap-4 mt-4">
-          <Link to={"dashboard/addProjects"} className="btn-primary">
+          <Link to={"addProjects"} className="btn-primary">
             + Add Project
           </Link>
-          <Link to={"dashboard/manageProjects"} className="btn-primary">
+          <Link to={"manageProjects"} className="btn-primary">
             Manage Projects
           </Link>
         </div>

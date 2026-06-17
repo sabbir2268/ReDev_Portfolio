@@ -43,7 +43,7 @@ const workflowSteps = [
     title: "Backend Development",
     description:
       "I create secure and scalable REST APIs, manage server logic, and handle validation and error handling.",
-    tools: ["Node.js", "Express.js"],
+    tools: ["Node.js", "Express.js", "REST APIs", "JWT / OAuth", "Axios"],
   },
   {
     icon: <FaDatabase />,
@@ -57,7 +57,7 @@ const workflowSteps = [
     title: "Deployment & Maintenance",
     description:
       "I manage version control with Git, deploy projects to production, and regularly improve performance and security to keep everything running smoothly.",
-    tools: ["Git", "GitHub", "Vercel / Netlify"],
+    tools: ["Git", "GitHub", "Vercel / Netlify", "Render"],
   },
 ];
 
