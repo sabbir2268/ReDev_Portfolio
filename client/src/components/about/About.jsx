@@ -1,5 +1,5 @@
 import React from "react";
-import profilePhoto from "../../assets/images/rehan-suit-croped.jpg";
+import profilePhoto from "../../assets/images/graybg.png";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
 const About = () => {
@@ -72,7 +72,7 @@ const About = () => {
             {/* Action Buttons */}
             <div className="mt-8 flex gap-4 flex-wrap">
               <Link
-                to={"/cv2026.pdf"}
+                to={"/cv_of_md_Sabbir.pdf"}
                 target="blank"
                 className="px-6 py-2 rounded-full bg-cyan-500 text-white font-medium hover:bg-cyan-400 transition"
               >

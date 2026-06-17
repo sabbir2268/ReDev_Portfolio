@@ -27,14 +27,14 @@ const profiles = [
     description: "Problem Solving",
     highlight: "50+ problems • DSA practice",
     icon: <FaCode size={26} />,
-    link: "https://leetcode.com/u/Sabbir68/",
+    link: "https://leetcode.com/u/Sabbir2268/",
   },
   {
     name: "Facebook",
     description: "Social Media",
     highlight: "Engage with developers • Share insights",
     icon: <FaFacebook size={26} />,
-    link: "https://facebook.com/sabbir2268",
+    link: "https://facebook.com/sabbir2267",
   },
 ];
 

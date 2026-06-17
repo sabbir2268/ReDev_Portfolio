@@ -12,6 +12,7 @@ import DashHome from "../pages/dashBoard/dashHome/DashHome";
 import AddProjects from "../pages/dashBoard/addProjects/AddProjects";
 import Messages from "./../pages/dashBoard/messages/Messages";
 import ManageProjects from "../pages/dashBoard/manageProjects/ManageProjects";
+import Error from "../pages/Error";
 
 export const router = createBrowserRouter([
   {
@@ -71,4 +72,9 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "*",
+    element: <Error></Error>
+
+  }
 ]);

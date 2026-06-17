@@ -7,9 +7,9 @@ const AllProjects = () => {
   const { projects, projectsLoading } = useContext(ProjectsContext);
 
   if (projectsLoading)
-    return <p className="text-center mt-10">Loading projects...</p>;
+    return <div className="h-100 flex items-center justify-center text-3xl font-bold text-cyan-500">Loading projects...</div>;
   if (!projects || projects.length === 0)
-    return <p className="text-center mt-10">No projects available</p>;
+    return <div className="h-100 flex items-center justify-center text-3xl font-bold text-red-400">No projects available</div>;
 
   // Group projects by category
   const projectsByCategory = projects.reduce((acc, project) => {
